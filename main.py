@@ -49,6 +49,10 @@ class Entries:
             no_button = Button(master=mw.top, text="NO", command=mw.cancel)
             mw.add_button(yes_button)
             mw.add_button(no_button)
+        plot_button = self.parent_window.get_button_by_name('plot')
+        if plot_button:
+            plot_button.pack_forget()
+        self.parent_window.add_button('plot', 'Plot', 'plot', hot_key='<Return>')
 
 
 # class for plotting (класс для построения графиков)
